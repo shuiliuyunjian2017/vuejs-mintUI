@@ -1,0 +1,531 @@
+/**
+ * Author: liuchi
+ * Date: 2018-05-21
+ * email: liuchi@header.com.cn;
+ */
+@import url('var.less');
+
+.f-clearfix {
+  zoom:1;
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+a {
+  outline: none;
+  color: @colorFontPrimary;
+  text-decoration: none;
+  &:hover {
+    color: @colorPrimary;
+  }
+}
+input {
+  outline: none;
+}
+html {
+  position: relative;
+  height: 100%;
+}
+body {
+  font-family: '\5FAE\8F6F\96C5\9ED1';
+  color: @colorFontPrimary;
+}
+/* reset end */
+
+/* 媒体查询 */
+/*html{font-size:10px}
+@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px;}}
+@media screen and (min-width:376px) and (max-width:414px){html{font-size:12px}}
+@media screen and (min-width:415px) and (max-width:639px){html{font-size:15px}}
+@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px}}
+@media screen and (min-width:720px) and (max-width:749px){html{font-size:22.5px}}
+@media screen and (min-width:750px) and (max-width:799px){html{font-size:23.5px}}
+@media screen and (min-width:800px){html{font-size:25px}}*/
+/* 媒体查询end */
+
+/* 顶点固定 */
+.g-fixtop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 3;
+}
+/* 顶部只有一条 */
+.has-fixed-top {
+  margin-top: 40px;
+}
+/* 顶部有tab和筛选 */
+.has-fixed-top2 {
+  margin-top: 85px;
+}
+/* 顶部有tab和搜索 */
+.has-fixed-top3 {
+  margin-top: 92px;
+}
+/* 没有无限滚动的页面要留出顶部栏的高度 */
+.g-content {
+  padding-bottom: 45px;
+}
+.g-content-infinite {
+  
+}
+/* 顶部过滤处的tab */
+.g-tabs {
+  position: relative;
+  display: flex;
+  .border-bottom();
+  text-align: center;
+  font-size: .9rem;
+  .item {
+    flex: 1;
+    height: 45px;
+    line-height: 45px;
+    &.is-selected {
+      color: @colorPrimary;
+    }
+    i {
+      font-size: .8rem;
+    }
+  }
+}
+.g-tabs-content {
+  font-size: .8rem;
+  .item {
+    padding: 15px 10px 15px 2rem;
+    .border-bottom();
+    &.is-selected {
+      color: @colorPrimary;
+    }
+    .icon {
+      float: right;
+      font-size: .8rem;
+    }
+  }
+}
+.g-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .6);
+  z-index: 2;
+}
+
+/* 列表样式 */
+.g-list {
+  margin-bottom: 150px;
+  .item {
+    display: flex;
+    .border-bottom();
+    margin-left: 1rem;
+    padding: 1rem 1rem 1rem 0;
+    .mint-cell-wrapper {
+
+    }
+  }
+  .item-pic {
+    width: 5rem;
+    height: 6rem;
+    margin-right: 1rem;
+    img {
+      width: 5rem;
+      height: 6rem;
+      border-radius: @defaultBorderRadius;
+    }
+  }
+  .item-txt {
+    flex: 1;
+    position: relative;
+    z-index: 0;
+    line-height: 1.1rem;
+    text-align: left;
+    overflow: hidden;
+    .tit {
+      margin-bottom: 5px;
+    }
+    .subtit {
+      font-size: 0.8rem;
+      color: @colorFontLightGray2;
+    }
+    .bot {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      font-size: 0.8rem;
+      .coin {
+        color: @colorPrimary;
+      }
+      .time {
+        position: absolute;
+        right: 0;
+        color: @colorFontLightGray;
+      }
+    }
+    
+  }
+}
+/* 列表末的loading图 */
+.g-list-loading {
+  margin-top: 1rem;
+  line-height: 20px;
+  text-align: center;
+  color: @colorFontLightGray;
+  span {
+    display: inline-block;
+    margin-right: .5rem;
+    vertical-align: middle;
+  }
+}
+/* 列表无数据 */
+.g-no-data {
+  margin-top: 40%;
+  line-height: 3rem;
+  text-align: center;
+  color: @colorFontLightGray;
+  .tips {
+    padding-left: 10px;
+  }
+}
+/* 列表无更多数据 */
+.g-nomore-data {
+  line-height: 3rem;
+  text-align: center;
+  color: @colorFontLightGray;
+}
+
+/* 列表详情 */
+.g-detail-list {
+  .detail-item {
+    display: flex;
+    padding: 15px 1rem;
+    line-height: 1.5rem;
+    .border-bottom();
+    &.img {
+      display: block;
+      text-align: center;
+    }
+    .label {
+      width: 80px;
+      text-align: right;
+      vertical-align: middle;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      /*color: @colorFontLightGray2;*/
+    }
+    .text {
+      flex: 1;
+    }
+  }
+  /* 状态的样式 */
+  .approving {
+    color:#67c23a;
+  }
+  .available {
+    color:#409eff;
+  }
+  .disable {
+    color:#909399;
+  }
+  .editing {
+    color:#e6a23c;
+  }
+  .reject {
+    color:#f56c6c;
+  }
+}
+
+/* 常用 */
+.g-block {
+  display: block;
+}
+.g-mauto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.g-mt0{
+  margin-top: 0;
+}
+.g-mt5-{
+  margin-top: -5px;
+}
+.g-mt5{
+  margin-top: 5px;
+}
+.g-mt10-{
+  margin-top: -10px;
+}
+.g-mtb10-{
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+.g-mt10 {
+  margin-top: 10px;
+}
+.g-mt12 {
+  margin-top: 12px;
+}
+.g-mt15 {
+  margin-top: 15px;
+}
+.g-mt15-{
+  margin-top: -15px;
+}
+.g-mt20 {
+  margin-top: 20px;
+}
+.g-mt20- {
+  margin-top: -20px;
+}
+.g-mt30 {
+  margin-top: 30px;
+}
+.g-mt50 {
+  margin-top: 50px;
+}
+.g-mtb5 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.g-mtb10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.g-mtb20 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.g-ml5 {
+  margin-left: 5px;
+}
+.g-mlr5 {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.g-ml10 {
+  margin-left: 10px;
+}
+.g-ml10- {
+  margin-left: -10px;
+}
+.g-mlr10 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.g-ml10- {
+  margin-left: -10px;
+}
+.g-ml15 {
+  margin-left: 15px;
+}
+.g-ml18 {
+  margin-left: 18px;
+}
+.g-ml15- {
+  margin-left: -15px;
+}
+.g-ml20- {
+  margin-left: -20px;
+}
+.g-ml20 {
+  margin-left: 20px;
+}
+.g-ml30 {
+  margin-left: 30px;
+}
+.g-ml40 {
+  margin-left: 40px;
+}
+.g-mr5 {
+  margin-right: 5px;
+}
+.g-mr10 {
+  margin-right: 10px;
+}
+.g-mr20 {
+  margin-right: 20px;
+}
+.g-mr27 {
+  margin-right: 27px;
+}
+.g-mr40 {
+  margin-right: 40px;
+}
+.g-mb0 {
+  margin-bottom: 0;
+}
+.g-mb10 {
+  margin-bottom: 10px;
+}
+.g-mb10- {
+  margin-bottom: -10px;
+}
+.g-mb20 {
+  margin-bottom: 20px;
+}
+.g-mb20- {
+  margin-bottom: -20px;
+}
+.g-mb30 {
+  margin-bottom: 30px;
+}
+.g-mb30- {
+  margin-bottom: -30px;
+}
+.g-mb50 {
+  margin-bottom: 50px;
+}
+.g-pl10 {
+  padding-left: 10px;
+}
+.g-pl25 {
+  padding-left: 25px;
+}
+.g-tc {
+  text-align: center;
+}
+.g-tl {
+  text-align: left;
+}
+.g-tr {
+  text-align: right;
+}
+.ff-arial {
+  font-family: 'Arial';
+}
+.lh-40 {
+  line-height: 40px;
+}
+.g-ind20 {
+  text-indent: 1rem;
+}
+
+/* 功能类 */
+.f-flex {
+  display: flex;
+}
+.f-inblock {
+  display: inline-block;
+}
+.f-intable {
+  display: inline-table;
+}
+.f-block {
+  display: block !important;
+}
+.f-hide {
+  display: none;
+}
+.f-static {
+  position: static;
+}
+.f-vertop {
+  vertical-align: top;
+}
+.f-l {
+  float: left;
+}
+.f-r {
+  float: right;
+}
+
+/* 字体颜色 */
+.t-prim {
+  color: @colorPrimary;
+}
+.t-impt {
+  color: @colorError;
+}
+[v-cloak]{
+  display:none;
+}
+
+/* 按钮类 */
+.btn {
+  /*box-sizing: border-box;*/
+  display: inline-block;
+  min-width: 5rem;
+  height: @moralHeight;
+  line-height: @moralHeight;
+  padding: 0 1rem;
+  /*font-size: @fontsizeNormal;*/
+  font-size: 1rem;
+  text-align: center;
+  border-radius: @defaultBorderRadius;
+  border: 1px solid @borderColor;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.btn-prim {
+  background-color: @colorPrimary;
+  border-color: @colorPrimary;
+  color: #fff;
+  &:hover {
+    background-color: @colorPrimaryHover;
+    color: #fff;
+  }
+  &:active {
+    background-color: @colorPrimaryAcitve;
+    color: #fff;
+  }
+}
+.btn-normal {
+  border: 1px solid @borderColor;
+  color: @colorFontLightGray;
+  &:hover {
+    background-color: @colorStartPrimary;
+    border-color: @colorPrimary; 
+  }
+}
+.btn-disabled {
+  background-color: @disabledBgColor;
+  color: @colorFontLightWhite;
+  cursor: not-allowed;
+  border-color: @disabledBgColor;
+  &:hover {
+    background-color: @disabledBgColor;
+    border-color: @disabledBgColor; 
+  }
+}
+.btn-spec {
+  display: block;
+  background-color: @colorEndPrimary;
+  border: 1px dashed @colorPrimary;
+  color: @colorPrimary;
+  &:hover {
+    background-color: @colorStartPrimary;
+  }
+}
+.btn-l {
+  height: @largeHeight;
+  line-height: @largeHeight;
+}
+.btn-s {
+  height: @smallHeight;
+  line-height: @smallHeight;
+}
+.btn-border-prim {
+  border: 1px solid @colorPrimary;
+  color: @colorPrimary;
+  &:hover {
+    background-color: @colorPrimary;
+    color: #fff;
+  }
+}
+.border-radius20 {
+  .border-radius(20px);
+}
+.border-radius25 {
+  .border-radius(25px);
+}
+.border1 {
+  .border(1px, @borderColor);
+}

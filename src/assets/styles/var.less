@@ -1,0 +1,91 @@
+/* 字体设置 */
+@fontEN:-apple-system-font,"Helvetica Neue";
+@fontCN:"Microsoft YaHei","PingFang SC","Hiragino Sans GB";
+@fontSans:sans-serif;
+@fontDefault:@fontCN,@fontEN,@fontSans;
+
+/* 颜色设置 */
+@colorPrimary: #26a2ff;
+@colorPrimaryHover: #53aef3;
+@colorPrimaryAcitve: #177fce;
+@colorNoraml: #fff;
+@colorNoramlHover: #f0f0f0;
+@colorNoramlAcitve: #dfdfdf;
+@colorStartPrimary: #fdebd3;
+@colorEndPrimary: #fff7ec;
+@colorError: #ff4e4e;
+@colorErrorTips: #ec5050;
+@colorFontPrimary: #232323;
+@colorFontImportant: #f60000;
+@colorFontLightGray: #666;
+@colorFontLightGray2: #999;
+@colorFontLightWhite: #fff;
+@colorDark: #f9fafc;
+@colorOrange: #eb5211;
+@colorScrollbarThumb: #f1f1f1;
+
+/* 圆角大小 */
+@defaultBorderRadius: 3px;
+.border-radius (@radius: @defaultBorderRadius) {
+  border-radius: @radius;
+}
+
+/* 阴影方式 */
+@defaultBoxShadow: 1px 0 10px rgba(0, 0, 0, .1);
+
+/* 表单　输入框等边框颜色 */
+@moralHeight: 40px;
+@largeHeight: 40px;
+@smallHeight: 28px;
+@borderColor: #eee;
+@paddingHori: 10px;
+@paddingVert: 10px;
+@disabledBgColor: #ccc;
+@contBorderColor: #ccc;
+@selBgColor: #fafafb;
+@primaryBgColor: #fff;
+
+
+/* 字体大小 */
+@fontsizeSmall: .6rem;
+@fontsizeNormal: .7rem;
+@fontsizeLarge: .8rem;
+@fontsize2L: .9rem;
+@fontsizeXL: 1.5rem;
+
+/* 装饰线颜色 */
+@decoratelineNormal:#fbae41;
+
+/* 列表 */
+@listTitBg: #f9fafc;
+@listStripeBg: #fafafa;
+@listHoverBg: #f5f7fa;
+
+/* 其他 */
+@leftbarHoverBg: #f5f5f5;
+@leftbarSelBorColor: #fbae41;
+@forbiddenBgColor: rgba(199, 199, 199, 0.5);;
+@fixedBgColor: green;
+@canSelectBgColor: green;
+@isSelectedBgColor: green;
+
+/* 边框 */
+@defaultBorderWidth: 1px;
+.border (@borderWidth: @defaultBorderWidth, @borderColor: @borderColor) {
+	border: @borderWidth solid @borderColor;
+	@media screen and (-webkit-min-device-pixel-ratio: 2) {
+		border: @borderWidth/2 solid @borderColor;
+	}
+	@media screen and (-webkit-min-device-pixel-ratio: 3) {
+	  border: @borderWidth/3 solid @borderColor;
+	}
+}
+.border-bottom (@borderWidth: @defaultBorderWidth, @borderColor: @borderColor) {
+	border-bottom: @borderWidth solid @borderColor;
+	@media screen and (-webkit-min-device-pixel-ratio: 2) {
+		border-bottom: @borderWidth/2 solid @borderColor;
+	}
+	@media screen and (-webkit-min-device-pixel-ratio: 3) {
+	  border-bottom: @borderWidth/3 solid @borderColor;
+	}
+}

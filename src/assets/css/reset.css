@@ -1,0 +1,59 @@
+html, body, div, span, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn, em, img, ins, kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary,time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    /*font-size:1rem;*/
+    vertical-align:baseline;
+    background:transparent;
+}
+body {
+    line-height:1;
+}
+:focus {
+	outline: 1;
+}
+ol,ul {
+    list-style:none;
+}
+i{font-style:normal;}
+.fl{float: left;}
+.fr{float: right;}
+/* 清楚浮动 */
+.clear:after{content:'';display:block;clear:both;height:0;overflow:hidden;visibility:hidden;}
+.clear{zoom:1;}
+/* 状态的样式 */
+.approving{
+color:#67c23a;
+}
+.available{
+color:#409eff;
+}
+.disable{
+color:#909399;
+}
+.editing{
+color:#e6a23c;
+}
+.reject{
+color:#f56c6c;
+}
+/* 文件样式颜色 */
+.fa-file-pdf-o{
+    color:#EB4F38;
+}
+.fa-file-word-o{
+    color:#56ABE4;
+}
+.fa-file-powerpoint-o{
+    color:#EB4F38;
+}
+.fa-file-excel-o{
+    color:#11CD6D;
+}
+.fafile-video-o{
+    color:#7AC120;
+}
+.fa-file-audio-o{
+    color:#F20883;
+}
